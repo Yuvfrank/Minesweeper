@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #ffffff;
+    margin: 0;
+    border: 10px solid black;
+    text-align: center;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+h1 {
+    font-size: 72px;
+    color: white;
+    text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000,
+        0px 0px 0px #000,
+        2px 2px 4px #000;
+    margin: 10px;
+}
+
+h2 {
+    margin: auto;
+    font-size: 36px;
+    color: white;
+    text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000,
+        0px 0px 0px #000,
+        2px 2px 4px #000;
+}
+
+h3 {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000,
+        0px 0px 0px #000,
+        2px 2px 4px #000;
+}
+
+div {
+    padding: 10px;
+    margin: 10px auto;
+}
+
+button {
+    color: black;
+    background-image: linear-gradient(grey, lightgrey, white);
+    font-weight: 900;
+    height: 30px;
+    min-width: 140px;
+    width: auto;
+    padding: 2px;
+    margin: 10px 10px 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: darkred;
+}
+
+.board-container {
+    margin: auto;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    display: inline-block;
+}
+
+.board {
+    cursor: pointer;
+}
+
+.cell {
+    background-color: white;
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid grey;
+    transition: background-color 1s;
+}
+
+.cell:hover:not(.mine):not(.flag):not(.tagged) {
+    background-color: grey;
+}
+
+.tagged {
+    background-color: black;
+    font-size: 15px;
+}
+
+.mega-tag {
+    background-color: grey;
+}
+
+.mine {
+    background-color: crimson;
+}
+
+.flag {
+    background-color: gold;
+}
+
+@keyframes blink-safe {
+
+    0%,
+    100% {
+        background-color: var(--bg-color);
+    }
+
+    50% {
+        background-color: black;
+    }
+}
+
+.safe-click {
+    animation: blink-safe 1s 3;
+}
+
+@keyframes blink-removed {
+
+    0%,
+    100% {
+        background-color: var(--bg-color);
+    }
+
+    50% {
+        background-color: crimson;
+    }
+}
+
+.mine-removed {
+    animation: blink-removed 1s 3;
+}
+
+.score {
+    width: 200px;
+    height: 240px;
+    box-shadow: 5px 5px grey, 10px 10px black;
+    border: 5px solid black;
+    border-radius: 40px;
+    display: inline-block;
+    position: fixed;
+    bottom: 80px;
+    left: 10px;
+    z-index: -1;
+}
+
+.footer {
+    color: #ffffff;
+    background-color: slategrey;
+    height: 70px;
+    padding: 20px;
+    margin: auto;
+    position: fixed;
+    bottom: calc(0vh + 10px);
+    width: calc(100vw - 20px);
+}
+
+.hidden {
+    display: none;
+}

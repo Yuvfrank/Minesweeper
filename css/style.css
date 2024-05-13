@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    border: 10px solid #f1b442fb;
+    text-align: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ffffff 25%, #f1b442fb 25%, #f1b442fb 50%, #ffffff 50%, #ffffff 75%, #f1b442fb 75%, #f1b442fb 100%);
+    background-size: 5px 5px;
+}
+
+h1 {
+    font-size: 72px;
+    color: gold;
+    text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000,
+        0px 0px 0px #000,
+        2px 2px 4px #000;
+    margin: 10px;
+}
+
+h2 {
+    margin: auto;
+    font-size: 36px;
+    color: gold;
+    text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000,
+        0px 0px 0px #000,
+        2px 2px 4px #000;
+}
+
+h3 {
+    margin: 0;
+    font-size: 20px;
+    color: lime;
+    text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black,
+        0px 0px 0px black,
+        2px 2px 4px black;
+}
+
+div {
+    padding: 10px;
+    margin: 10px auto;
+}
+
+button {
+    color: black;
+    background-image: linear-gradient(rgb(23, 158, 23), yellow);
+    font-weight: 900;
+    height: 30px;
+    min-width: 140px;
+    width: auto;
+    padding: 2px;
+    margin: 10px 10px 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: darkmagenta;
+}
+
+.options {
+    width: 700px;
+}
+
+.board-container {
+    margin: auto;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    display: inline-block;
+}
+
+.board {
+    cursor: pointer;
+}
+
+.cell {
+    color: white;
+    background-color: white;
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid grey;
+    transition: background-color 1s;
+}
+
+.cell:hover:not(.mine):not(.flag):not(.tagged) {
+    background-color: grey;
+}
+
+.tagged {
+    background-color: green;
+    font-size: 15px;
+}
+
+.mega-tag {
+    background-color: grey;
+}
+
+.mine {
+    background-color: red;
+}
+
+.flag {
+    background-color: yellow;
+}
+
+@keyframes blink-safe {
+
+    0%,
+    100% {
+        background-color: var(--bg-color);
+    }
+
+    50% {
+        background-color: green;
+    }
+}
+
+.safe-click {
+    animation: blink-safe 1s 3;
+}
+
+@keyframes blink-removed {
+
+    0%,
+    100% {
+        background-color: var(--bg-color);
+    }
+
+    50% {
+        background-color: red;
+    }
+}
+
+.mine-removed {
+    animation: blink-removed 1s 3;
+}
+
+.score {
+    width: 200px;
+    height: 240px;
+    box-shadow: 5px 5px brown, 10px 10px green;
+    border: 5px solid rgb(23, 158, 23);
+    border-radius: 40px;
+    display: inline-block;
+    position: fixed;
+    bottom: 80px;
+    left: 10px;
+    z-index: -1;
+}
+
+.footer {
+    color: #ffffff;
+    background-color: brown;
+    height: 70px;
+    padding: 20px;
+    margin: auto;
+    position: fixed;
+    bottom: calc(0vh + 10px);
+    width: calc(100vw - 20px);
+}
+
+.hidden {
+    display: none;
+}

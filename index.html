@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link id="stylesheet" rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="onInit()" oncontextmenu="event.preventDefault()">
+
+    <h1>Minesweeper</h1>
+
+    <div class="options">
+        <button onclick="onSetDifficulty(this)">Beginner 🔰</button>
+        <button onclick="onSetDifficulty(this)">Advanced 🔰🔰</button>
+        <button onclick="onSetDifficulty(this)">Expert 🔰🔰🔰</button>
+        <button onclick="onManualMode(this)">Manual Mode 🚧</button>
+        <br>
+        <button class="hint" onclick="onHint(this)">Hints 💡X3</button>
+        <button class="mega" onclick="onMegaHint(this)">Mega Hints 🧠X1</button>
+        <button class="safe" onclick="onSafeClick(this)">Safe Clicks 🧷X3</button>
+        <br>
+        <button class="exterminate" onClick="onMineExterminator(this, gBoard)">Exterminate 💥X1</button>
+        <button class="undo" onclick="onUndo()">No Undo ❌</button>
+        <button onclick="onMode(this)">Dark Mode 🌓</button>
+        <h2 class="life">Remaining Lives: 3</h2>
+    </div>
+
+    <table class="board-container">
+        <tbody class="board"></tbody>
+    </table>
+
+    <div class="score">
+        <h2>High Scores</h2>
+        <br>
+        <h3 class="lvl1">Beginner: </h3>
+        <br>
+        <h3 class="lvl2">Advanced: </h3>
+        <br>
+        <h3 class="lvl3">Expert: </h3>
+    </div>
+
+    <br>
+
+    <button class="reset" onclick="onReset()">Reset Game</button>
+
+    <h2>Time</h2>
+    <h2 class="time">0.000</h2>
+
+    <h2 class="footer">Yuval Frank</h2>
+
+    <script src="js/util.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/features.js"></script>
+</body>
+
+</html>

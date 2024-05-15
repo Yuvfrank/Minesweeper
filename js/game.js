@@ -185,6 +185,7 @@ function onFirstClick(board) {
     setBoardMinesNegsCount(board)
     updateUndoButton()
     if (!gTimer) startTimer()
+    playStartSound()
 }
 
 function setBoardMinesNegsCount(board) {

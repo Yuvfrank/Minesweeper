@@ -285,7 +285,10 @@ function onManualMode(elBtn) {
             const elCell = document.querySelector(`.cell-${cell.i}-${cell.j}`)
             elCell.classList.remove('mine')
         })
-        if (!gTimer && gGame.manualModeMines) startTimer()
+        if (!gTimer && gGame.manualModeMines) {
+            startTimer()
+            playStartSound()
+        }
     }
     elBtn.innerText = (gGame.isManual) ? 'Start Game? ✔️' : 'Manual Mode 🚧'
 }
@@ -308,4 +311,10 @@ function onMode(elBtn) {
             elStyle.href = 'css/style3.css'
             break
     }
+}
+
+function playStartSound() {
+    const audio = new Audio('audio/start.mp3')
+    audio.volume = 0.1
+    audio.play()
 }

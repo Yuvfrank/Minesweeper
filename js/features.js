@@ -1,10 +1,17 @@
 'use strict'
 
-function onSetDifficulty({ innerText }) {
+function onSetDifficulty(lvl) {
     // Set model properties based on level and reset game
-    gLevel = levelDict[innerText.replace(/[\p{Emoji_Presentation}\s]/gu, '').toLowerCase()]
+    gLevel = levelDict[lvl]
     onReset()
 }
+
+// // Option 2 passing (this)
+// function onSetDifficulty({ innerText }) {
+//     // Set model properties based on level and reset game
+//     gLevel = levelDict[innerText.replace(/[\p{Emoji_Presentation}\s]/gu, '').toLowerCase()]
+//     onReset()
+// }
 
 function updateResetButton() {
     // Update reset button on DOM based on current game status
@@ -287,7 +294,7 @@ function onManualMode(elBtn) {
         })
         if (!gTimer && gGame.manualModeMines) {
             startTimer()
-            playStartSound()
+            // playStartSound()
         }
     }
     elBtn.innerText = (gGame.isManual) ? 'Start Game? ✔️' : 'Manual Mode 🚧'

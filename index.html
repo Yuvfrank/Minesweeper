@@ -8,14 +8,14 @@
     <link id="stylesheet" rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="onInit()" oncontextmenu="event.preventDefault()">
+<body onload="onInit()">
 
     <h1>Minesweeper</h1>
 
     <div class="options">
-        <button onclick="onSetDifficulty(this)">Beginner 🔰</button>
-        <button onclick="onSetDifficulty(this)">Advanced 🔰🔰</button>
-        <button onclick="onSetDifficulty(this)">Expert 🔰🔰🔰</button>
+        <button onclick="onSetDifficulty('beginner')">Beginner 🔰</button>
+        <button onclick="onSetDifficulty('advanced')">Advanced 🔰🔰</button>
+        <button onclick="onSetDifficulty('expert')">Expert 🔰🔰🔰</button>
         <button onclick="onManualMode(this)">Manual Mode 🚧</button>
         <br>
         <button class="hint" onclick="onHint(this)">Hints 💡X3</button>
@@ -29,7 +29,7 @@
     </div>
 
     <table class="board-container">
-        <tbody class="board"></tbody>
+        <tbody class="board" oncontextmenu="event.preventDefault()"></tbody>
     </table>
 
     <div class="score">

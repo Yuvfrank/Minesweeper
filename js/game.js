@@ -185,7 +185,7 @@ function onFirstClick(board) {
     setBoardMinesNegsCount(board)
     updateUndoButton()
     if (!gTimer) startTimer()
-    playStartSound()
+    // playStartSound()
 }
 
 function setBoardMinesNegsCount(board) {
@@ -336,7 +336,7 @@ function expandShown(board, rowIdx, colIdx) {
     // recursion exit condition
     if (board[rowIdx][colIdx].minesAroundCount > 0) {
         return
-    }
+    } // Not really needed, just to represent recursion principle
 
     for (var i = rowIdx - 1; i <= rowIdx + 1; i++) {
         if (i < 0 || i >= board.length) continue

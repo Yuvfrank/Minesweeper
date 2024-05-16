@@ -92,7 +92,7 @@ button:hover {
 
 .tagged {
     background-color: green;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .mega-tag {
@@ -155,11 +155,9 @@ button:hover {
 .footer {
     color: #ffffff;
     background-color: brown;
-    height: 70px;
     padding: 20px;
-    margin: auto;
     position: fixed;
-    bottom: calc(0vh + 10px);
+    bottom: 10px;
     width: calc(100vw - 20px);
 }
 
